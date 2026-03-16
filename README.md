@@ -5,7 +5,7 @@ If no such character exists, print -1.
 Ex:  Input : aabc   Output :  a -1 b b
 
 Ex:  Input  :  aabb  Output:  a -1 b -1
-
+#Solution
 1. Create a Frequency Array of size 26 (initialized to 0) to store character counts.
 
 2. Create a Queue to maintain the order of arrival of characters.
