@@ -1,36 +1,36 @@
-#include <iostream>
-#include <queue>
+#include <iostream> // input output
+#include <queue> // queue data structure
 #include <vector>
-#include <string>
+#include <string> // text handling
 
 using namespace std;
 
 void firstNonRepeating(string A) {
-    int count[26] = {0};
-    queue<char> q;
-    string result = "";
+    int count[26] = {0}; // frequency array to store the number of times each element appears
+    queue<char> q; //FIFO structure which stores characters with q as the structure name
+    string result = ""; //variable to store result
 
     for (int i = 0; i < A.length(); i++) {
-        char ch = A[i];
+        char ch = A[i]; //ch stores the current character iterating through the loop
 
         // Skip spaces if they are in the input
         if(ch == ' ') continue;
 
-        count[ch - 'a']++;
-        q.push(ch);
+        count[ch - 'a']++; //everytime a character appears increment the value at that index 
+        q.push(ch); //character that arrives is added to the back of the queue
 
         while (!q.empty()) {
             if (count[q.front() - 'a'] > 1) {
-                q.pop();
+                q.pop(); //remove the repeating character from the front
             } else {
-                result += q.front();
+                result += q.front(); 
                 result += " ";
-                break;
+                break; // stop this step if we find the non repeating character
             }
         }
 
         if (q.empty()) {
-            result += "-1 ";
+            result += "-1 "; //if queue is empty i.e -1 then no non-repeating characters exist
         }
     }
     cout << "Step-by-step result: " << result << endl;
