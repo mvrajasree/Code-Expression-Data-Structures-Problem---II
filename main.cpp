@@ -5,13 +5,13 @@
 
 using namespace std;
 
-void firstNonRepeating(string A) {
+void firstNonRepeating(string Set) {
     int count[26] = {0}; // frequency array to store the number of times each element appears
     queue<char> q; //FIFO structure which stores characters with q as the structure name
     string result = ""; //variable to store result
 
-    for (int i = 0; i < A.length(); i++) {
-        char ch = A[i]; //ch stores the current character iterating through the loop
+    for (int i = 0; i < Set.length(); i++) {
+        char ch = Set[i]; //ch stores the current character iterating through the loop
 
         // Skip spaces if they are in the input
         if(ch == ' ') continue;
